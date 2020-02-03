@@ -1,0 +1,6 @@
+{
+  "search.usePCRE2": true,
+  "eslint.workingDirectories": [
+    "./client"
+  ]
+}
