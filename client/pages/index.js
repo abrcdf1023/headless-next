@@ -4,12 +4,12 @@ import fetch from 'isomorphic-unfetch'
 
 const Index = props => (
   <Layout>
-    <h1>Batman TV Shows</h1>
+    <h1>自由時報</h1>
     <ul>
-      {props.shows.map(show => (
-        <li key={show.id}>
-          <Link href="/show/[id]" as={`/show/${show.id}`}>
-            <a>{show.name}</a>
+      {props.articles.map(article => (
+        <li key={article.id}>
+          <Link href="/articles/[id]" as={`/articles/${article.id}`}>
+            <a>{article.name}</a>
           </Link>
         </li>
       ))}
@@ -18,13 +18,13 @@ const Index = props => (
 )
 
 Index.getInitialProps = async function() {
-  const res = await fetch('https://api.tvmaze.com/search/shows?q=batman')
+  const res = await fetch('http://localhost:1337/articles')
   const data = await res.json()
 
-  console.log(`Show data fetched. Count: ${data.length}`)
+  console.log(`Article data fetched. Count: ${data.length}`)
 
   return {
-    shows: data.map(entry => entry.show)
+    articles: data
   }
 }
 
