@@ -1,6 +1,6 @@
-import Layout from '../components/MyLayout'
-import Link from 'next/link'
-import fetch from 'isomorphic-unfetch'
+import Layout from "../components/MyLayout";
+import Link from "next/link";
+import fetch from "isomorphic-unfetch";
 
 const Index = props => (
   <Layout>
@@ -15,17 +15,17 @@ const Index = props => (
       ))}
     </ul>
   </Layout>
-)
+);
 
 Index.getInitialProps = async function() {
-  const res = await fetch('http://localhost:1337/articles')
-  const data = await res.json()
+  const res = await fetch("http://localhost:1337/articles");
+  const data = await res.json();
 
-  console.log(`Article data fetched. Count: ${data.length}`)
+  console.log(`Article data fetched. Count: ${data.length}`);
 
   return {
     articles: data
-  }
-}
+  };
+};
 
-export default Index
+export default Index;
