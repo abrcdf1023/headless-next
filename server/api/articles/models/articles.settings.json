@@ -1,6 +1,8 @@
 {
+  "connection": "default",
+  "collectionName": "articles",
   "info": {
-    "name": "Articles"
+    "name": "Article"
   },
   "options": {
     "increments": true,
@@ -16,7 +18,5 @@
     "content": {
       "type": "richtext"
     }
-  },
-  "connection": "default",
-  "collectionName": "articles"
+  }
 }
