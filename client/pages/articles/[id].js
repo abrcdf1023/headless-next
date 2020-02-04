@@ -1,14 +1,17 @@
 import Layout from '../../components/MyLayout'
+import MarkdownElement from '../../components/MarkdownElement'
 import fetch from 'isomorphic-unfetch'
 
 const Article = ({
   article
-}) => (
-  <Layout>
-    <h1>{article.name}</h1>
-    <p>{article.content}</p>
-  </Layout>
-)
+}) => {
+  return (
+    <Layout>
+      <h1>{article.name}</h1>
+      <MarkdownElement text={article.content} />
+    </Layout>
+  )
+}
 
 Article.getInitialProps = async function(context) {
   const { id } = context.query
