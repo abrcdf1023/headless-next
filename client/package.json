@@ -43,7 +43,11 @@
     }
   },
   "lint-staged": {
-    "pages/**/*.{js,jsx,ts,tsx,json,css,scss,md}, components/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+    "pages/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "components/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write",
       "git add"
     ]
