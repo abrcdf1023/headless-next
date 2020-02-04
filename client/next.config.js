@@ -7,12 +7,11 @@ module.exports = {
       '/': { page: '/' },
       '/about': { page: '/about' }
     };
-    const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
-    const data = await res.json();
-    const shows = data.map(entry => entry.show);
+    const res = await fetch('http://localhost:1337/articles');
+    const articles = await res.json();
 
-    shows.forEach(show => {
-      paths[`/show/${show.id}`] = { page: '/show/[id]', query: { id: show.id } };
+    articles.forEach(article => {
+      paths[`/articles/${article.id}`] = { page: '/articles/[id]', query: { id: article.id } };
     });
 
     return paths;
